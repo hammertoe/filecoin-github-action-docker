@@ -1,0 +1,11 @@
+name: 'Filecoin Localnet'
+description: 'Start a Filecoin localnet'
+
+outputs:
+  time:
+    description: 'The time we run'
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  
