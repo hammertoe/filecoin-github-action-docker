@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  test_filecoin_job:
+    runs-on: ubuntu-latest
+    name: A job to test filecoin network
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
